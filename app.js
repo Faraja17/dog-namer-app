@@ -36,27 +36,26 @@ app.post("/", function(req, res) {
     };
 
     const run = async () => {
+        try{    
             const response = await client.lists.batchListMembers("7f0aa8ef30", {
-                members: [{
-                    email_address: subscribingUser.email,
-                    status: "subscribed",
-                    merge_fields: {
-                        FNAME: subscribingUser.firstName,
-                        LNAME: subscribingUser.lastName
-                    }
-                }]  
+                    
+                email_address: subscribingUser.email,
+                status: "subscribed",
+                merge_fields: {
+                    FNAME: subscribingUser.firstName,
+                    LNAME: subscribingUser.lastName
+                }                    
             });
             console.log(response);
-            if(response.error_count===0) {
-                res.sendFile(__dirname + "/success.html");
-            }else{
-                res.sendFile(__dirname + "/failure.html");
-            }
+            res.sendFile(__dirname + "/success.html");
+            } catch (err) {
+            res.sendFile(__dirname + "/failure.html");
+        }
+            };
+          
+            console.log(err.status);
             
-        }   
-            // console.log(err.status);
-            
-        run().catch(e => res.sendFile(__dirname + "/failure.html"));
+        run();
 });
     
     // const jsonData = JSON.stringify(data);
