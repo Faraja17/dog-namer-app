@@ -36,8 +36,7 @@ app.post("/", function(req, res) {
     };
 
     const run = async () => {
-        try{
-            const response = await client.lists.addListMember("7f0aa8ef30", {
+            const response = await client.lists.batchListMembers("7f0aa8ef30", {
                 members: [{
                     email_address: subscribingUser.email,
                     status: "subscribed",
@@ -48,13 +47,17 @@ app.post("/", function(req, res) {
                 }]  
             });
             console.log(response);
-            res.sendFile(__dirname + "/success.html");
-        }   catch (err) {
-            console.log(err.status);
-            res.sendFile(__dirname + "/failure.html");
-        }
-    };
-        run();
+            if(response.error_count===0) {
+                res.sendFile(__dirname + "/success.html");
+            }else{
+                res.sendFile(__dirname + "/failure.html");
+            }
+            
+        }   
+            // console.log(err.status);
+            
+        run().catch(e => res.sendFile(__dirname + "/failure.html"));
+});
     
     // const jsonData = JSON.stringify(data);
 
@@ -75,7 +78,6 @@ app.post("/", function(req, res) {
     // request.write(jsonData);
     // request.end;
     
-});
 
 app.post("/failure", function(req, res) {
     res.redirect("/");
