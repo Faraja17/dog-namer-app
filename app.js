@@ -27,6 +27,7 @@ app.post("/", function(req, res) {
     const firstName = req.body.fName;
     const lastName = req.body.lName;
     const email = req.body.email;
+    const listId = "7f0aa8ef30";
     console.log(firstName, lastName, email)
     const subscribingUser = {
         firstName: firstName, 
@@ -36,13 +37,15 @@ app.post("/", function(req, res) {
 
     const run = async () => {
         try{
-            const response = await client.lists.addListMember("7f0aa8ef30", {
-                email_address: subscribingUser.email,
-                status: "subscribed",
-                merge_fields: {
-                    FNAME: subscribingUser.firstName,
-                    LNAME: subscribingUser.lastName
-                }
+            const response = await client.lists.batchListMembers("7f0aa8ef30", {
+                members: [{
+                    email_address: subscribingUser.email,
+                    status: "subscribed",
+                    merge_fields: {
+                        FNAME: subscribingUser.firstName,
+                        LNAME: subscribingUser.lastName
+                    }
+                }]  
             });
             console.log(response);
             res.sendFile(__dirname + "/success.html");
