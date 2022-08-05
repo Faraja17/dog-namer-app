@@ -19,7 +19,7 @@ app.get("/", function(request, response) {
 });
 
 client.setConfig({
-    apiKey: "1ba358f0237b05f41cf5fd60eea5bbad-us1", 
+    apiKey: "1ba358f0237b05f41cf5fd60eea5bbad-us17", 
     server: "us17"
 });
 
