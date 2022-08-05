@@ -48,14 +48,13 @@ app.post("/", function(req, res) {
             });
             console.log(response);
             res.sendFile(__dirname + "/success.html");
-            } catch (err) {
+        } catch (err) {
+            console.log(err.status);
             res.sendFile(__dirname + "/failure.html");
         }
-            };
-          
-            console.log(err.status);
+    };
             
-        run();
+    run();
 });
     
     // const jsonData = JSON.stringify(data);
