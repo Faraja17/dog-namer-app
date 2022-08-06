@@ -4,8 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
-const client = require("@mailchimp/mailchimp_marketing"); //you need to add dependency first in terminal. run npm i @mailchimp.marketing in terminal. Make sure you are inside the folder of your project. Check your package.json file, make sure @mailchimp/marketing has bbeen added in your dependencies.
-const { response } = require("express");
+const mailchimp = require("@mailchimp/mailchimp_marketing"); //you need to add dependency first in terminal. run npm i @mailchimp.marketing in terminal. Make sure you are inside the folder of your project. Check your package.json file, make sure @mailchimp/marketing has bbeen added in your dependencies.
+const {response} = require("express");
 
 const app = express();
 
@@ -14,11 +14,11 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/signup.html");
+app.get("/", function(request, response) {
+    response.sendFile(__dirname + "/signup.html");
 });
 
-client.setConfig({
+mailchimp.setConfig({
     apiKey: "1ba358f0237b05f41cf5fd60eea5bbad-us17", 
     server: "us17"
 });
@@ -28,6 +28,8 @@ app.post("/", function(req, res) {
     const lastName = req.body.lName;
     const email = req.body.email;
     console.log(firstName, lastName, email)
+    
+    const listId = "7f0aa8ef30";
     const subscribingUser = {
         firstName: firstName, 
         lastName: lastName, 
@@ -36,7 +38,7 @@ app.post("/", function(req, res) {
 
     const run = async () => {
         try {    
-            const response = await mailchimp.lists.addListMember("7f0aa8ef30", {
+            const response = await mailchimp.lists.addListMember(listId, {
                     
                 email_address: subscribingUser.email,
                 status: "subscribed",
