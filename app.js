@@ -24,9 +24,9 @@ client.setConfig({
 });
 
 app.post("/", function(req, res) {
-    const firstName = "Prudence" //req.body.fName;
-    const lastName = "McVankab" //req.body.lName;
-    const email = "prudence.mcvankab@example.com" //req.body.email;
+    const firstName = req.body.fName;
+    const lastName = req.body.lName;
+    const email = req.body.email;
     console.log(firstName, lastName, email)
     const subscribingUser = {
         firstName: firstName, 
