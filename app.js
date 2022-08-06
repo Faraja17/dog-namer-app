@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get("/", function(request, response) {
-    response.sendFile(__dirname + "/signup.html");
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/signup.html");
 });
 
 client.setConfig({
@@ -27,7 +27,6 @@ app.post("/", function(req, res) {
     const firstName = req.body.fName;
     const lastName = req.body.lName;
     const email = req.body.email;
-    const listId = "7f0aa8ef30";
     console.log(firstName, lastName, email)
     const subscribingUser = {
         firstName: firstName, 
@@ -37,7 +36,7 @@ app.post("/", function(req, res) {
 
     const run = async () => {
         try {    
-            const response = await client.lists.batchListMembers("7f0aa8ef30", {
+            const response = await client.lists.addListMembers("7f0aa8ef30", {
                     
                 email_address: subscribingUser.email,
                 status: "subscribed",
