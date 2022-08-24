@@ -1,0 +1,63 @@
+.logo {
+  width: 3%;
+}
+
+nav {
+  text-align: right;
+  height: 100px;
+}
+
+.first-nav-link {
+  padding-left: 65%;
+}
+
+.third-nav-link {
+  padding-right: 5%;
+}
+
+a {
+  font-size: 1.5em;
+  padding: 0 2% 0 2%;
+  color: #123b1b;
+  font-weight: bold;
+}
+
+
+header {
+  background-color:#000000;
+  background-image: url("https://cdn.pixabay.com/photo/2018/05/28/11/42/dog-3435827_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: right;
+  height: 800px;
+  width: 100%;
+  color: #ffffff;
+}
+
+h1 {
+  margin: 0%;
+  padding: 15% 0 1% 10%;
+  font-size: 3.2em;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 1% 10%;
+  font-size: 1.8em;
+}
+
+.app-name {
+  text-transform: uppercase;  
+}
+
+.call-to-action {
+  color: #00ff40;
+  text-decoration: none;
+  margin: 0;
+  padding: 0 0 1% 10%;
+  font-size: 2.2em;
+}
+
+footer {
+  text-align: center;
+}
