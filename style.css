@@ -50,14 +50,28 @@ p {
   text-transform: uppercase;  
 }
 
-.call-to-action {
-  color: #00ff40;
+.call-to-action, .call-to-action2 {
+  color: #e5f594;
   text-decoration: none;
   margin: 0;
-  padding: 0 0 1% 10%;
+  padding: 0 0 0 10%;
   font-size: 2.2em;
 }
 
+.call-to-action2 {
+  color:  #00ff40;
+  padding: 0 0 0 2%;
+}
+
+
 footer {
   text-align: center;
+  margin: 2%;
+}
+
+.copyright {
+  font-size: .85em;
+  margin: 2%;
+  text-align: center;
+  padding: 0;
 }
