@@ -1,7 +1,7 @@
 nav {
   text-align: right;
   height: 100px;
-  background-image: url(https://cdn.pixabay.com/photo/2013/07/12/15/02/dog-149300_960_720.png);
+  background-image: url("https://cdn.pixabay.com/photo/2013/07/12/15/02/dog-149300_960_720.png");
   background-repeat: no-repeat;
   background-size: 50px 50px;
   background-position: left;
