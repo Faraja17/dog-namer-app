@@ -83,7 +83,7 @@ app.post("/signup.html", function(req, res) {
     
 
 app.post("/failure", function(req, res) {
-    res.redirect("/signup");
+    res.redirect(__dirname + "/signup.html");
 });
 
 app.listen(process.env.PORT || 3000, function() {
