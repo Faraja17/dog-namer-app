@@ -14,12 +14,12 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get("/", function(request, response) {
-    response.sendFile(__dirname + "appindex.html");
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "index.html");
 });
 
-app.get("/signup.html", function(request, response) {
-    response.sendFile(__dirname + "/signup.html");
+app.get("/signup.html", function(req, res) {
+    res.sendFile(__dirname + "/signup.html");
 });
 
 mailchimp.setConfig({
