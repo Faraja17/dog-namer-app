@@ -27,7 +27,7 @@ mailchimp.setConfig({
     server: "us17"
 });
 
-app.post("/signup.html", function(req, res) {
+app.post("/", function(req, res) {
     const firstName = req.body.fName;
     const lastName = req.body.lName;
     const email = req.body.email;
