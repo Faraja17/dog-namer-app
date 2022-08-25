@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/', function(request, response) {
+app.get("/", function(request, response) {
     response.sendFile(__dirname + "index.html");
 });
 
@@ -27,7 +27,7 @@ mailchimp.setConfig({
     server: "us17"
 });
 
-app.post("/", function(req, res) {
+app.post("/signup.html", function(req, res) {
     const firstName = req.body.fName;
     const lastName = req.body.lName;
     const email = req.body.email;
