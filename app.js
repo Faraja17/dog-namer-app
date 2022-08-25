@@ -9,14 +9,14 @@ const {response} = require("express");
 
 const app = express();
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + "index.html")
-})
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+app.get('/', function(request, response){
+    res.sendFile(__dirname + "index.html")
+});
 
 app.get("/signup.html", function(request, response) {
     response.sendFile(__dirname + "/signup.html");
@@ -83,7 +83,7 @@ app.post("/", function(req, res) {
     
 
 app.post("/failure", function(req, res) {
-    res.redirect("/");
+    res.redirect("/signup.html");
 });
 
 app.listen(process.env.PORT || 3000, function() {
