@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/", function(request, response) {
-    response.sendFile(__dirname + "/signup.html");
+    response.sendFile(__dirname + "/index.html");
 });
 
-app.get("/index.html", function(req, res) {
-    res.sendFile(__dirname + "/index.html");
+app.get("/signup.html", function(request, response) {
+    response.sendFile(__dirname + "/signup.html");
 });
 
 mailchimp.setConfig({
@@ -27,7 +27,7 @@ mailchimp.setConfig({
     server: "us17"
 });
 
-app.post("/", function(req, res) {
+app.post("/signup", function(req, res) {
     const firstName = req.body.fName;
     const lastName = req.body.lName;
     const email = req.body.email;
