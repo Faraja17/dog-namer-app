@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/signup.html");
 });
 
-app.get("/signup.html", function(req, res) {
-    res.sendFile(__dirname + "/signup.html");
+app.get("/index.html", function(req, res) {
+    res.sendFile(__dirname + "/index.html");
 });
 
 mailchimp.setConfig({
@@ -83,7 +83,7 @@ app.post("/signup.html", function(req, res) {
     
 
 app.post("/failure", function(req, res) {
-    res.redirect(307, "/signup");
+    res.redirect("/");
 });
 
 app.listen(process.env.PORT || 3000, function() {
