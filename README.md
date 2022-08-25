@@ -14,6 +14,6 @@ A foster dog namer web application.
 
 ### Links
 
-[Draft landing page on Replit!](https://dog-namer-app.faraja.repl.co/)
+[Draft landing page on Heroku!](https://foster-dog-namer.herokuapp.com/)
 
-[Draft newsletter sign up page on Heroku!](https://peaceful-basin-14103.herokuapp.com/)
+[Draft newsletter sign up page on Heroku!](https://foster-dog-namer.herokuapp.com/signup.html)
