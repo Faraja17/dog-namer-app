@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function(request, response){
-    res.sendFile(__dirname + "index.html")
+    res.sendFile(__dirname + "index.html");
 });
 
 app.get("/signup.html", function(request, response) {
