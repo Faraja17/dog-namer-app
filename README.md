@@ -17,3 +17,5 @@ A foster dog namer web application.
 [Draft landing page on Heroku!](https://foster-dog-namer.herokuapp.com/)
 
 [Draft newsletter sign up page on Heroku!](https://foster-dog-namer.herokuapp.com/signup.html)
+
+[Landing Page in React on Codesandbox!](https://codesandbox.io/s/kind-rubin-ngu7fl?file=/src/App.js)
