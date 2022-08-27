@@ -1,3 +1,7 @@
+body {
+  font-family: sans-serif;
+}
+
 nav {
   text-align: right;
   height: 100px;
