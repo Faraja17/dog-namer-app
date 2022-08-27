@@ -1,6 +1,7 @@
 //jshint esversion:6
 
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
@@ -14,13 +15,22 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+//have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, "../foster-dog-namer", "build")));
+
+// Handle GET requests to /api route
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
 });
 
-app.get("/", function(request, response) {
-    response.sendFile(__dirname + "/index.html");
-});
+// all other GET requests not handled before will return our React App
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../foster-dog-namer", "build", "index.html"));
+})
+
+// app.get("/", function(request, response) {
+//     response.sendFile(__dirname + "/index.html");
+// });
 
 app.get("/signup.html", function(request, response) {
     response.sendFile(__dirname + "/signup.html");
