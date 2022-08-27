@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello from server!" }):
+});
+
 app.get("/", function(request, response) {
     response.sendFile(__dirname + "/index.html");
 });
