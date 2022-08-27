@@ -40,6 +40,8 @@ p {
 .app-name {
   font-variant: small-caps;
   font-size: 1.4em;
+  font-weight: bold;
+  color: #f5f2d7;
 }
 
 .call-to-action, .call-to-action2 {
