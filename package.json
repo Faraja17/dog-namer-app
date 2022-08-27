@@ -1,7 +1,7 @@
 {
   "name": "dog-namer-app",
   "version": "1.0.0",
-  "description": "signup landing page",
+  "description": "landing page",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
