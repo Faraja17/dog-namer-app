@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 
 //Have Node serve the files for our built React app. In other words, we are creating a middleware here.
 //When you navigate to the root page, it uses the built react app.
-app.use(express.static(path.resolve(__dirname, "../foster-dog-namer/build")));
+app.use("/", express.static(path.resolve(__dirname, "../foster-dog-namer/build")));
 
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
