@@ -4,7 +4,7 @@
   "description": "landing page",
   "main": "app.js",
   "scripts": {
-    "start": "app.js",
+    "start": "node app.js",
     "build": "cd foster-dog-namer && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
