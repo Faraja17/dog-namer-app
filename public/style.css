@@ -6,6 +6,8 @@ body {
 nav {
   text-align: right;
   height: 100px;
+  position: relative;
+  top: 20px;
   background-image: url("images/logo.png");
   background-repeat: no-repeat;
   background-size: 50px 50px;
