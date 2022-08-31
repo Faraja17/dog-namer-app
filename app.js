@@ -10,7 +10,7 @@ const {response} = require("express");
 
 const app = express();
 
-const PORT = 80;
+const PORT = 5000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
@@ -104,7 +104,7 @@ app.get("/api", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log("Server is running on port 80.");
+    console.log("Server is running on port 50.");
 });
 
 // API Key
