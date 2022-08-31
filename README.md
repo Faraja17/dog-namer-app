@@ -14,11 +14,9 @@ A foster dog namer web application.
 
 ### Links
 
-[Draft landing page on Heroku!](https://foster-dog-namer.herokuapp.com/)
+[Front end in React on Vercel!](https://foster-dog-namer.vercel.app/)
 
-[Draft newsletter sign up page on Heroku!](https://foster-dog-namer.herokuapp.com/signup.html)
-
-[Landing Page in React on CodeSandbox!](https://ngu7fl.csb.app/)
+[Server on AWS!](http://54.242.73.146/)
 
 ### What I learned
 
