@@ -12,7 +12,7 @@ nav {
   background-position: left;
 }
 
-nav-links {
+.nav-links {
   position: relative;
   top: 20px;
 }
