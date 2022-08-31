@@ -19,16 +19,16 @@ app.use(bodyParser.urlencoded({
 
 //Have Node serve the files for our built React app. In other words, we are creating a middleware here.
 //When you navigate to the root page, it uses the built react app.
-app.use(express.static(path.resolve(__dirname, "../foster-dog-namer/build")));
+// app.use(express.static(path.resolve(__dirname, "../foster-dog-namer/build")));
 
 // all other GET requests not handled before will return our React App
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../foster-dog-namer/build", "index.html"));
-})
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "../foster-dog-namer/build", "index.html"));
+// })
 
-// app.get("/", function(request, response) {
-//     response.sendFile(__dirname + "/index.html");
-// });
+app.get("/", function(request, response) {
+    response.sendFile(__dirname + "/index.html");
+});
 
 app.get("/signup.html", function(request, response) {
     response.sendFile(__dirname + "/signup.html");
@@ -104,7 +104,7 @@ app.get("/api", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log("Server is running on port 50.");
+    console.log("Server is running on port 5000.");
 });
 
 // API Key
