@@ -9,8 +9,6 @@ const {response} = require("express");
 
 const app = express();
 
-const mykey = config.MY_KEY;
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
     extended: true
@@ -21,7 +19,7 @@ app.get("/", function(request, response) {
 });
 
 mailchimp.setConfig({
-    apiKey: mykey, 
+    apiKey: "1ba358f0237b05f41cf5fd60eea5bbad-us17", 
     server: "us17"
 });
 
@@ -89,7 +87,7 @@ app.listen(process.env.PORT || 3000, function() {
 });
 
 // API Key
-// mykey
+// 1ba358f0237b05f41cf5fd60eea5bbad-us17
 
 // List Id
 // 7f0aa8ef30
