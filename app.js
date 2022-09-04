@@ -1,7 +1,6 @@
 //jshint esversion:6
 
 const express = require("express");
-const path = require("path");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
@@ -10,27 +9,12 @@ const {response} = require("express");
 
 const app = express();
 
-const PORT = 5000;
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-//Have Node serve the files for our built React app. In other words, we are creating a middleware here.
-//When you navigate to the root page, it uses the built react app.
-// app.use(express.static(path.resolve(__dirname, "../foster-dog-namer/build")));
-
-// all other GET requests not handled before will return our React App
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "../foster-dog-namer/build", "index.html"));
-// })
-
 app.get("/", function(request, response) {
-    response.sendFile(__dirname + "/index.html");
-});
-
-app.get("/signup.html", function(request, response) {
     response.sendFile(__dirname + "/signup.html");
 });
 
@@ -39,7 +23,7 @@ mailchimp.setConfig({
     server: "us17"
 });
 
-app.post("/signup", function(req, res) {
+app.post("/", function(req, res) {
     const firstName = req.body.fName;
     const lastName = req.body.lName;
     const email = req.body.email;
@@ -98,13 +82,8 @@ app.post("/failure", function(req, res) {
     res.redirect("/");
 });
 
-// Handle GET requests to /api route
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-});
-
-app.listen(PORT, () => {
-    console.log("Server is running on port 5000.");
+app.listen(process.env.PORT || 3000, function() {
+    console.log("Server is running on port 3000.");
 });
 
 // API Key
